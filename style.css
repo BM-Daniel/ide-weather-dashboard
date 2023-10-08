@@ -34,53 +34,61 @@ body {
   max-height: 100%;
   gap: 1.5rem;
 }
-.grid-container div {
+.grid-container h2 {
+  font-size: 1.5rem;
+}
+.grid-container .one, .grid-container .two, .grid-container .three, .grid-container .four {
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.1);
   color: rgb(255, 255, 255);
-  padding: 1rem;
+  padding: 0.8rem 1rem;
 }
 .grid-container .one {
-  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-.grid-container .one p {
+.grid-container .one div .name {
   font-size: 1.5rem;
   font-weight: 500;
-  margin: 1rem 0;
 }
-.grid-container .one p span {
+.grid-container .one div .value {
   font-size: 1.2rem;
-  font-weight: 400;
-  display: block;
-  margin-top: -4px;
 }
 .grid-container .two {
   grid-column: 2/3;
 }
-.grid-container .two h2 {
-  font-size: 1.5rem;
-}
 .grid-container .two .top {
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgb(255, 255, 255);
+  padding: 0.8rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 .grid-container .two .top .temp {
   font-size: 4.5rem;
   font-weight: 700;
 }
 .grid-container .two .bottom {
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgb(255, 255, 255);
+  padding: 0.8rem 1rem;
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
+  margin-top: 0.8rem;
 }
-.grid-container .two .bottom p {
-  font-size: 2rem;
-  font-weight: 600;
+.grid-container .two .bottom div {
   text-align: center;
 }
-.grid-container .two .bottom p span {
+.grid-container .two .bottom div .name {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.grid-container .two .bottom div .value {
   font-size: 1.5rem;
   font-weight: 400;
 }
@@ -120,12 +128,20 @@ body {
   gap: 1rem;
 }
 .grid-container .three .details {
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgb(255, 255, 255);
+  padding: 0.8rem 1rem;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
   height: 100%;
 }
 .grid-container .three .details div {
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgb(255, 255, 255);
+  padding: 0.8rem 1rem;
   width: 30%;
   display: flex;
   flex-direction: column;

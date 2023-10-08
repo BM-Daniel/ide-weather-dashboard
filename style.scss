@@ -36,14 +36,15 @@ body {
   border: solid green;
   height: 100%;
   padding: 1.5rem 2rem;
+  padding: 0.8rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-// .header {
-//   color: $white;
-// }
+.header {
+  color: $white;
+}
 
 .grid-container {
   display: grid;
@@ -188,6 +189,41 @@ body {
 
   .four {
     grid-column: 1/5;
+    display: flex;
+    justify-content: space-between;
+
+    .other-days {
+      @include tile;
+      width: 16%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      > p {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+
+      .middle {
+        text-align: center;
+
+        p:nth-child(1) {
+          font-size: 3rem;
+          font-weight: 500;
+        }
+
+        p:nth-child(2) {
+          font-size: 1.5rem;
+        }
+      }
+
+      .bottom {
+        display: flex;
+        gap: 1rem;
+        font-size: 1.5rem;
+      }
+    }
   }
 }
 

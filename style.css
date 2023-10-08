@@ -22,9 +22,14 @@ body {
   border: solid green;
   height: 100%;
   padding: 1.5rem 2rem;
+  padding: 0.8rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.header {
+  color: rgb(255, 255, 255);
 }
 
 .grid-container {
@@ -159,6 +164,38 @@ body {
 }
 .grid-container .four {
   grid-column: 1/5;
+  display: flex;
+  justify-content: space-between;
+}
+.grid-container .four .other-days {
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgb(255, 255, 255);
+  padding: 0.8rem 1rem;
+  width: 16%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.grid-container .four .other-days > p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.grid-container .four .other-days .middle {
+  text-align: center;
+}
+.grid-container .four .other-days .middle p:nth-child(1) {
+  font-size: 3rem;
+  font-weight: 500;
+}
+.grid-container .four .other-days .middle p:nth-child(2) {
+  font-size: 1.5rem;
+}
+.grid-container .four .other-days .bottom {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
 }
 
 @keyframes fadeIn {

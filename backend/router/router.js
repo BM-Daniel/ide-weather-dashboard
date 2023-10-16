@@ -5,6 +5,6 @@ const router = Router();
 import * as  controller from '../controller/weatherController.js';
 
 // GET METHOD
-router.get('/weather', controller.getCurrentWeather);
+router.get('/weather/:location', controller.getCurrentWeather);
 
 export default router;

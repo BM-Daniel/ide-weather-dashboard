@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="insights.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div class="background"></div>
+  <div class="container">
+    <section class="header">
+      <div class="nav">
+        <h1>IDE Weather Dashboard</h1>
+        <p id="greeting">Good Morning</p>
+      </div>
+
+      <div class="search">
+        <form action="">
+          <input type="text" name="search-bar" id="search-bar" placeholder="Enter location here">
+        </form>
+      </div>
+    </section>
+
+    <div class="grid-container">
+      <section class="one">
+        <div>
+          <p class="name">Location</p>
+          <p class="value" id="location">Tamale</p>
+        </div>
+        <div>
+          <p class="name">Last Update</p>
+          <p class="value" id="last-update-time">5:32pm</p>
+          <p class="value" id="last-update-date">8th October, 2023</p>
+        </div>
+        <div>
+          <p class="name">Current Time</p>
+          <p class="value" id="current-time">6:00pm</p>
+        </div>
+        <div>
+          <p class="name">Current Date</p>
+          <p class="value" id="current-date">8th October, 2023</p>
+        </div>
+      </section>
+
+      <section class="two">
+        <h2>Current Weather</h2>
+
+        <div class="top">
+          <p class="weather-image sunny"></p>
+          <p class="temp">24 °C</p>
+        </div>
+
+        <div class="bottom">
+          <div class="day-temp">
+            <p class="name">Day</p>
+            <p class="value">31 °C</p>
+          </div>
+          <div class="night-temp">
+            <p class="name">Night</p>
+            <p class="value">24 °C</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="three">
+        <h2>Details</h2>
+        <div class="details">
+          <div class="humidity">
+            <i class="fa-solid fa-droplet"></i>
+            <p class="name">Humidity</p>
+            <p class="value">78%</p>
+          </div>
+          <div class="wind">
+            <i class="fa-solid fa-wind"></i>
+            <p class="name">Wind</p>
+            <p class="value">6km/h</p>
+          </div>
+          <div class="visibility">
+            <i class="fa-regular fa-eye"></i>
+            <p class="name">Visibility</p>
+            <p class="value">10km</p>
+          </div>
+          <div class="air-quality">
+            <i class="fa-solid fa-fan"></i>
+            <p class="name">Air Quality</p>
+            <p class="value">10AQI</p>
+          </div>
+          <div class="uv-index">
+            <i class="fa-solid fa-sun"></i>
+            <p class="name">UV Index</p>
+            <p class="value">3 Moderate</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="four">
+        <!-- <div class="other-days">
+          <p>Wednesday</p>
+          <div class="middle">
+            <p>27 °C</p>
+            <p><i class="fa-solid fa-droplet"></i> 24%</p>
+          </div>
+        -->
+      </section>
+    </div>
+  </div>
+
+
+  <script src="insights.js"></script>
+</body>
+</html>

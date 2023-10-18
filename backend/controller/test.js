@@ -2,7 +2,7 @@ import { getCurrentWeather } from './weatherController.js';
 
 async function runTest() {
     try {
-        const location = 'Osu';
+        const location = 'kumasi';
 
         const req = { params: { location } };
         const res = {

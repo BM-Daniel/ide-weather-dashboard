@@ -1,3 +1,5 @@
 
 # dependencies
 backend/node_modules
+index.js
+.env

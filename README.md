@@ -16,7 +16,7 @@ It will consist of 2 pages in total; the landing page and the insights/details p
 - The current temperature of the location in Celsius
 - The humidity level of the area expressed as a percentage
 - The average day temperature and night temperature
-- The wind speed os the area in km/h
+- The wind speed of the area in km/h
 - A section to summarize the forecast for subsequent days
 - It will display the timestamp (date and time) of the last forecast update
 

@@ -20,5 +20,4 @@ async function runTest() {
         console.error('Error:', error);
     }
 }
-
 runTest();

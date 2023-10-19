@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  color: rgb(255, 255, 255);
+}
+
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: linear-gradient(90deg, rgb(65, 160, 250) 0%, rgb(82, 178, 254) 100%);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.container h1 {
+  font-size: 6rem;
+}/*# sourceMappingURL=not-found.css.map */

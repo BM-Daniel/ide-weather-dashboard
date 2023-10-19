@@ -76,6 +76,10 @@ app.get('/insights', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/insights.html'));
 });
 
+app.get('/not-found', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/not-found.html'));
+});
+
 
 /* api routes */
 app.use('/api', router);

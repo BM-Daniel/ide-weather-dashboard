@@ -1,4 +1,5 @@
 // INSIGHTS PAGE
+const weatherAPI = 'http://localhost:8080/api/weather';
 
 const greeting = document.getElementById('greeting');
 const searchBar = document.getElementById('search-bar');
@@ -26,6 +27,18 @@ const tile4Container = document.querySelector('.four');
 
 
 
+// TIME OF DAY - MORNING, AFTERNOON, EVENING
+const hourOfDay = new Date().getHours();
+
+if (hourOfDay >= 6 && hourOfDay < 12) {
+  greeting.innerText = 'Good Morning';
+} else if (hourOfDay >= 12 && hourOfDay < 18) {
+  greeting.innerText = 'Good Afternoon';
+} else {
+  greeting.innerText = 'Good Evening';
+}
+
+
 // EVENT LISTENERS
 searchBar.addEventListener('keypress', function (event) {
   if (event.key === 'Enter') {
@@ -33,12 +46,14 @@ searchBar.addEventListener('keypress', function (event) {
 
     event.preventDefault();
     searchBar.value = '';
+
+    window.location.href = `/insights.html?location=${userLocation}`;
+    fetchData(`${weatherAPI}/${userLocation}`)
   }
 })
 
 
-
-const weatherAPI = 'http://localhost:8080/api/weather';
+// WEATHER SEARCH DATA
 let searchLocation = window.location.href;
 searchLocation = searchLocation.split('=')[1];
 const fullURL = `${weatherAPI}/${searchLocation}`;
@@ -51,7 +66,7 @@ async function fetchData(url) {
       throw new Error(`Error. Status: ${response.status}`);
     }
     const data = await response.json();
-
+    console.log(data);
 
     // Tile 1
     const date = new Date(data.lastUpdate);
@@ -79,7 +94,7 @@ async function fetchData(url) {
       mainDiv.classList.add('other-days');
     
       const dayName = document.createElement('p');
-      dayName.textContent = 'Wednesday';
+      dayName.textContent = 'Other Days';
     
       const middleDiv = document.createElement('div');
       middleDiv.classList.add('middle');
@@ -114,6 +129,7 @@ async function fetchData(url) {
 
 
   } catch (error) {
+    window.location.href = `/not-found`;
     console.error(`Fetch error: ${error}`);
   }
 }

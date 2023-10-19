@@ -6,6 +6,7 @@ const apiKey = process.env.API_KEY;
 
 export async function getCurrentWeather(req, res) {
     const { location } = req.params;
+    console.log(apiKey)
     const apiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}`;
 
     try {

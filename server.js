@@ -2,12 +2,15 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import router from './router/router.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 // api swagger documentation
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUiExpress from 'swagger-ui-express';
 
 const app = express();
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 
 // Middleware
@@ -60,6 +63,18 @@ router.use('/docs', swaggerUiExpress.serve,swaggerUiExpress.setup(swaggerDocs));
 app.get('/', (req, res) => {
     return res.status(201).json("Hello world");
 })
+
+
+// static files
+app.use(express.static(path.join('public')));
+
+app.get('/landing-page', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/landing-page.html'));
+});
+
+app.get('/insights', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/insights.html'));
+});
 
 
 /* api routes */

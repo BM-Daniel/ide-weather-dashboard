@@ -83,11 +83,11 @@ body {
 .grid-container .one {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
 @media (max-width: 1400px) {
   .grid-container .one {
-    gap: 0rem;
+    gap: 2rem;
   }
 }
 .grid-container .one div .name {

@@ -35,7 +35,7 @@ To get started with this project, follow these steps:
 2. Navigate into the project directory:
 
    ```
-   cd `backend``
+   cd `ide-weather-dashboard``
    ```
 
 3. Install the project dependencies:

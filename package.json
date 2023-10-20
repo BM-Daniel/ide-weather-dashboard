@@ -17,6 +17,10 @@
     "swagger-ui-express": "^5.0.0"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "watch": "tailwindcss -i ./public/input.css -o ./public/css/main.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
   }
 }

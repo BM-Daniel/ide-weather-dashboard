@@ -66,7 +66,6 @@ async function fetchData(url) {
       throw new Error(`Error. Status: ${response.status}`);
     }
     const data = await response.json();
-    console.log(data);
 
     // Tile 1
     const date = new Date(data.lastUpdate);
@@ -91,22 +90,24 @@ async function fetchData(url) {
     // Tile 4
     for (let i = 0; i < 6; i++) {
       const mainDiv = document.createElement('div');
-      mainDiv.classList.add('other-days');
+      mainDiv.classList.add('other-days', 'flex', 'items-center', 'justify-between', 'bg-tileColor', 'rounded', 'p-3', 'font-bold', 'flex-grow', 'md:flex-col');
     
       const dayName = document.createElement('p');
+      dayName.classList.add('md:text-2xl')
       dayName.textContent = 'Other Days';
     
       const middleDiv = document.createElement('div');
-      middleDiv.classList.add('middle');
+      middleDiv.classList.add('middle', 'flex', 'gap-x-4', 'items-center', 'md:flex-col', 'md:gap-x-0');
     
       const otherDayTemp = document.createElement('p');
+      otherDayTemp.classList.add('font-bold', 'text-2xl', 'md:text-6xl')
       otherDayTemp.textContent = Math.round(data.subsequentDays[i].temperature) + '°C';
     
       const otherDayHumidity = document.createElement('p');
       otherDayHumidity.innerHTML = `<i class="fa-solid fa-droplet"></i> ${data.subsequentDays[i].humidity}%`;
     
       const bottomDiv = document.createElement('div');
-      bottomDiv.classList.add('bottom');
+      bottomDiv.classList.add('bottom', 'flex', 'gap-x-4');
     
       const temp1 = document.createElement('p');
       temp1.textContent = Math.round(data.subsequentDays[i].averageDayTemp) + '°C';

@@ -5,94 +5,130 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Insights</title>
 
+  <link rel="stylesheet" href="./css/main.css">
+
   <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet"> -->
-  <link rel="stylesheet" href="./css/main.css">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-  <div class="background"></div>
-  <div class="container">
-    <section class="header">
-      <div class="nav">
-        <h1>IDE Weather Dashboard</h1>
-        <p id="greeting"></p>
+  <div class=" bg-gradient-to-r from-blue1 to-blue2 min-h-screen">
+    <!-- CONTAINER -->
+    <div class="text-white1 p-4">
+
+      <!-- HEADER SECTION -->
+      <section class="header flex flex-col items-center gap-y-6 md:flex-row md:gap-x-48">
+        <div class="nav flex flex-col items-center md:items-start">
+          <h1 class="text-4xl font-bold ">IDE Weather Dashboard</h1>
+          <p id="greeting" class="text-2xl"></p>
+        </div>
+
+        <div class="search">
+          <input class="bg-transparent border-2 border-white1 placeholder:text-white1 px-2 py-1 md:border-none md:bg-tileColor md:rounded md:text-xl" type="text" name="search-bar" id="search-bar" placeholder="Enter location here">
+        </div>
+      </section>
+
+      <!-- GRID SECTION -->
+      <div class="grid-container grid grid-cols-1 gap-y-4 mt-12 md:grid-cols-4 md:grid-rows-2 md:gap-x-4">
+
+        <!-- TILE 1 -->
+        <section class="one bg-tileColor rounded p-3 space-y-6 md:space-y-24">
+          <div>
+            <p class="name font-bold text-2xl">Location</p>
+            <p class="value text-xl" id="location"></p>
+          </div>
+          <div>
+            <p class="name font-bold text-2xl">Last Update</p>
+            <p class="value text-xl" id="last-update-time"></p>
+            <p class="value text-xl" id="last-update-date"></p>
+          </div>
+        </section>
+
+        <!-- TILE 2 -->
+        <section class="two flex flex-col bg-tileColor rounded p-3 space-y-6">
+          <h2 class="text-center text-3xl font-bold">Current Weather</h2>
+
+          <div class="space-y-2 flex flex-col flex-grow">
+            <!-- TOP -->
+            <div class="top bg-tileColor rounded p-3 flex items-center justify-between flex-grow">
+              <p class="weather-image sunny"></p>
+              <p class="temp text-7xl font-bold"></p>
+            </div>
+  
+            <!-- BOTTOM -->
+            <div class="bottom bg-tileColor rounded p-3 flex items-center justify-between flex-grow">
+              <div class="day-temp text-center">
+                <p class="name text-2xl font-bold">Day</p>
+                <p class="value text-xl"></p>
+              </div>
+              <div class="night-temp text-center">
+                <p class="name text-2xl font-bold">Night</p>
+                <p class="value text-xl"></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TILE 3 -->
+        <section class="three flex flex-col bg-tileColor rounded p-3 space-y-6 md:col-start-3 md:col-end-5">
+          <h2 class="text-center text-3xl font-bold">Details</h2>
+          
+          <!-- CONTAINER -->
+          <div class="details flex flex-wrap gap-2 text-center flex-grow md:gap-4">
+            <!-- HUMIDITY -->
+            <div class="humidity bg-tileColor rounded p-3 w-[30%] flex flex-col justify-center">
+              <i class="fa-solid fa-droplet md:text-3xl md:mb-3"></i>
+              <p class="name md:text-2xl md:font-bold">Humidity</p>
+              <p class="value md:text-xl"></p>
+            </div>
+
+            <!-- WIND -->
+            <div class="wind bg-tileColor rounded p-3 w-[30%] flex flex-col justify-center">
+              <i class="fa-solid fa-wind md:text-3xl md:mb-3"></i>
+              <p class="name md:text-2xl md:font-bold">Wind</p>
+              <p class="value md:text-xl"></p>
+            </div>
+
+            <!-- VISIBILITY -->
+            <div class="visibility bg-tileColor rounded p-3 w-[30%] flex flex-col justify-center">
+              <i class="fa-regular fa-eye md:text-3xl md:mb-3"></i>
+              <p class="name md:text-2xl md:font-bold">Visibility</p>
+              <p class="value md:text-xl"></p>
+            </div>
+
+            <!-- AIR QUALITY -->
+            <div class="air-quality bg-tileColor rounded p-3 w-[30%] flex flex-col justify-center">
+              <i class="fa-solid fa-fan md:text-3xl md:mb-3"></i>
+              <p class="name md:text-2xl md:font-bold">Air Quality</p>
+              <p class="value md:text-xl"></p>
+            </div>
+
+            <!-- UV INDEX -->
+            <div class="uv-index bg-tileColor rounded p-3 w-[30%] flex flex-col justify-center">
+              <i class="fa-solid fa-sun md:text-3xl md:mb-3"></i>
+              <p class="name md:text-2xl md:font-bold">UV Index</p>
+              <p class="value md:text-xl"></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- TILE 4 -->
+        <section class="four flex flex-col bg-tileColor rounded p-3 space-y-2 md:col-start-1 md:col-end-5 md:flex-row md:space-y-0 md:space-x-4 md:flex-grow md:text-2xl">
+          <!-- <div class="other-days flex items-center justify-between bg-tileColor rounded p-3 md:flex-col">
+            <p class="">Other Days</p>
+            
+            <div class="middle flex border-2 gap-x-4 md:flex-col md:gap-x-0 items-center">
+              <p>24°C</p>
+              <p><i class="fa-solid fa-droplet"></i> 78%</p>
+            </div>
+            <div class="bottom flex border-2">
+              <p>43°C</p>
+              <p>54°C</p>
+            </div>
+          </div> -->
+        </section>
       </div>
-
-      <div class="search">
-        <form action="">
-          <input type="text" name="search-bar" id="search-bar" placeholder="Enter location here">
-        </form>
-      </div>
-    </section>
-
-    <div class="grid-container">
-      <section class="one">
-        <div>
-          <p class="name">Location</p>
-          <p class="value" id="location"></p>
-        </div>
-        <div>
-          <p class="name">Last Update</p>
-          <p class="value" id="last-update-time"></p>
-          <p class="value" id="last-update-date"></p>
-        </div>
-      </section>
-
-      <section class="two">
-        <h2>Current Weather</h2>
-
-        <div class="top">
-          <p class="weather-image sunny"></p>
-          <p class="temp"></p>
-        </div>
-
-        <div class="bottom">
-          <div class="day-temp">
-            <p class="name">Day</p>
-            <p class="value"></p>
-          </div>
-          <div class="night-temp">
-            <p class="name">Night</p>
-            <p class="value"></p>
-          </div>
-        </div>
-      </section>
-
-      <section class="three">
-        <h2>Details</h2>
-        <div class="details">
-          <div class="humidity">
-            <i class="fa-solid fa-droplet"></i>
-            <p class="name">Humidity</p>
-            <p class="value"></p>
-          </div>
-          <div class="wind">
-            <i class="fa-solid fa-wind"></i>
-            <p class="name">Wind</p>
-            <p class="value"></p>
-          </div>
-          <div class="visibility">
-            <i class="fa-regular fa-eye"></i>
-            <p class="name">Visibility</p>
-            <p class="value"></p>
-          </div>
-          <div class="air-quality">
-            <i class="fa-solid fa-fan"></i>
-            <p class="name">Air Quality</p>
-            <p class="value"></p>
-          </div>
-          <div class="uv-index">
-            <i class="fa-solid fa-sun"></i>
-            <p class="name">UV Index</p>
-            <p class="value"></p>
-          </div>
-        </div>
-      </section>
-
-      <section class="four">
-      </section>
     </div>
   </div>
 

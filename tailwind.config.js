@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./public/*.html'],
+  content: ['./public/*.{html, js}'],
   theme: {
     screens: {
       sm: '480px',
@@ -13,7 +13,8 @@ export default {
         blue1: 'rgb(65, 160, 250)',
         blue2: 'rgb(82, 178, 254)',
         white1: 'rgb(255, 255, 255)',
-        tileColor: 'rgba(255, 255, 255, 0.1)',
+        tileColor: 'rgba(255, 255, 255, 0.2)',
+        tileColor2: 'rgba(255, 255, 255, 0.1)'
       }
     },
   },

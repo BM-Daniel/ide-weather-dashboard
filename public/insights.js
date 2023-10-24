@@ -39,6 +39,11 @@ if (hourOfDay >= 6 && hourOfDay < 12) {
 }
 
 
+// DAY OF THE WEEK
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+
+
 // EVENT LISTENERS
 searchBar.addEventListener('keypress', function (event) {
   if (event.key === 'Enter') {
@@ -58,6 +63,7 @@ let searchLocation = window.location.href;
 searchLocation = searchLocation.split('=')[1];
 const fullURL = `${weatherAPI}/${searchLocation}`;
 
+
 async function fetchData(url) {
   try {
     const response = await fetch(url);
@@ -65,6 +71,7 @@ async function fetchData(url) {
     if(!response.ok) {
       throw new Error(`Error. Status: ${response.status}`);
     }
+    
     const data = await response.json();
 
     // Tile 1
@@ -88,13 +95,15 @@ async function fetchData(url) {
     uvIndex.innerText = data.currentWeather.uvIndex;
 
     // Tile 4
-    for (let i = 0; i < 6; i++) {
+    const dateTime = new Date(data.currentWeather.dateTime).getDate();
+
+    for (let i = 0; i < 40; i+=7) {
       const mainDiv = document.createElement('div');
       mainDiv.classList.add('other-days', 'flex', 'items-center', 'justify-between', 'bg-tileColor', 'rounded', 'p-3', 'font-bold', 'flex-grow', 'md:flex-col');
     
       const dayName = document.createElement('p');
       dayName.classList.add('md:text-2xl')
-      dayName.textContent = 'Other Days';
+      dayName.textContent = days[new Date(data.subsequentDays[i].dateTime).getDay()];
     
       const middleDiv = document.createElement('div');
       middleDiv.classList.add('middle', 'flex', 'gap-x-4', 'items-center', 'md:flex-col', 'md:gap-x-0');
